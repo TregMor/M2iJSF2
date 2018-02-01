@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:body>
+	<h3>Première page de l'aprem !</h3>
+	<f:view>
+	<h:messages></h:messages>
+		<h:form id="Form1">
+			<h:outputLabel id="LblCodePostal" value="Saisie du code postal: " required = "true"></h:outputLabel>
+			<h:inputText id="txtCodePostal" value="#{beanVille.codePostal}">
+				<f:validateLength minimum="5" maximum="5"></f:validateLength>
+			</h:inputText>
+			
+			<h:commandButton id="BtnSaisie" value="Saisir" action="#{beanVille.valider}"></h:commandButton>
+			<br/>
+			<h:outputLabel id="LblNom" value="#{beanVille.nom}" ></h:outputLabel>
+		</h:form>
+	</f:view>
+</h:body>
+</html>
+ 

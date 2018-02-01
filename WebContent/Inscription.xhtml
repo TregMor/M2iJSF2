@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:body>
+	<h4>Inscription :</h4>
+	<h:form id="Form1">
+		<!-- <h:outputLabel binding = "#{loginBean.infoMessage}"></h:outputLabel> -->
+
+		<h:panelGrid border="0" columns="3">
+
+			<h:outputText id="lblNom" value="Nom: "></h:outputText>
+				<h:inputText id="txtNom" 
+							value="#{client.nom}" 
+							required="true"
+							requiredMessage="Le nom est requis">
+				</h:inputText>
+				<h:message for="txtNom"/>
+
+			<h:outputText id="lblPrenom" value="Prénom: "></h:outputText>
+				<h:inputText id="txtPrenom" 
+							 value="#{client.prenom}"
+							 required="true"
+							 requiredMessage="Le prénom est requis">>
+				</h:inputText>
+				<h:message for="txtPrenom"/>
+							 
+			
+			<h:outputText id="lblIdentifiant" value="Identifiant: "></h:outputText>
+				<h:inputText id="txtIdentifiant" 
+							 value="#{client.identifiant}"
+							 required="true"
+							 requiredMessage="L'identifiant est requis">
+				</h:inputText>
+				<h:message for="txtIdentifiant" />
+				
+			<h:outputText id="lblPassword" value="Mot de passe: "></h:outputText>
+				<h:inputText id="txtPassword" 
+							value="#{client.password}"
+							required="true"
+							requiredMessage="Le mot de passe est requis">
+				</h:inputText>
+				<h:message for="txtPassword"/>
+	
+			
+			<h:outputText id="lblAge" value="Age: "></h:outputText>
+			<h:selectOneMenu id="listeAge" value="#{client.age}">
+				<f:selectItem itemLabel="18 ans" itemValue="18"></f:selectItem>
+				<f:selectItem itemLabel="19 ans" itemValue="19"></f:selectItem>
+				<f:selectItem itemLabel="20 ans" itemValue="20"></f:selectItem>
+			</h:selectOneMenu>
+			
+			<h:message></h:message>
+			<h:outputText id="lblGenre" value="Genre :"></h:outputText>
+			<h:selectOneRadio id="genre" value = "#{client.genre}">
+				<f:selectItem itemLabel="Homme" 
+							  itemValue="1"></f:selectItem>
+				<f:selectItem itemLabel="Femme" 
+							  itemValue="2"></f:selectItem>
+			</h:selectOneRadio>
+
+			<h:message></h:message>
+			<h:commandButton id="BtnSaisie" value="Saisir"
+				action="#{client.valider}"></h:commandButton>
+
+			<h:commandButton id="BtnAnnuler" value="Annuler"
+				immediate="true"
+				action="#{client.annuler}"></h:commandButton>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
