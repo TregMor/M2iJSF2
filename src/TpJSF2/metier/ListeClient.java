@@ -15,6 +15,7 @@ public class ListeClient {
 	public ListeClient() {
 		listeClient = new ArrayList<Client>();
 		
+		//Création de 10 clients
 		for (int i=1; i<=10; i++) {
 			Client client = new Client();
 			client.setNom("nom" +i);
@@ -22,27 +23,22 @@ public class ListeClient {
 			client.setIdentifiant("identifiant" +i);
 			client.setPassword("password" +i);
 			
+			//Place les clients ds la liste
 			listeClient.add(client);
 		}
-		
 	}
 	
-	
 	/**
-	 * 
 	 * @param identifiant
 	 * @param password
 	 * @return Client si client trouvé, null sinon
 	 */
-	public Client checkAuthentification(String identifiant, String password) {
-		for(Client c : listeClient) {
-			if (c.getIdentifiant().equalsIgnoreCase(identifiant) && c.getPassword().equals(password)) {
-				return c;
+	public Client checkAuthentication(String identifiant, String password) {
+		for(Client clientTrouve : listeClient) {
+			if (clientTrouve.getIdentifiant().equalsIgnoreCase(identifiant) && clientTrouve.getPassword().equals(password)) {
+				return clientTrouve;
 			}
 		}
 		return null;	
 	}
-
-	
-
 }

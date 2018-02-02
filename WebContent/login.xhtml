@@ -16,7 +16,7 @@
 					<h:inputText id="txtIdentifiant" value="#{loginBean.identifiant}"></h:inputText>
 				<h:outputText id="lblPassword" value="Mot de passe: "></h:outputText>
 					<h:inputText id="txtPassWord" value="#{loginBean.password}"></h:inputText>
-				<h:commandButton id="BtnSaisie" value="Saisir" action="#{loginBean.valider}"></h:commandButton>
+				<h:commandButton id="BtnSaisie" value="Saisir" action="#{loginBean.valider(listeClient)}"></h:commandButton>
 			</h:panelGrid>
 		</h:form>
 </h:body>

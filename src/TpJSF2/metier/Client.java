@@ -28,7 +28,6 @@ public class Client {
 	public void setGenre(Integer genre) {this.genre = genre;}
 	
 
-
 	public String valider() {
 		System.out.println("Inscription validée");
 		return "Login";
@@ -37,7 +36,6 @@ public class Client {
 	public String annuler() {
 		System.out.println("Inscription annulée");
 		return "Login";
-		
 	}
 
 }

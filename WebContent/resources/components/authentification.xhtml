@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:cc="http://java.sun.com/jsf/composite">
+	
+	<cc:interface>
+		<cc:attribute name="label1" required="true"></cc:attribute>
+		<cc:attribute name="label2" required="true"></cc:attribute>
+		<cc:attribute name="label3" required="true"></cc:attribute>
+		<cc:attribute name="action"></cc:attribute>
+	</cc:interface>
+	
+	
+	<cc:implementation>
+	
+		<h:form id="Form1" >
+			<h:outputLabel binding = "#{loginBean.infoMessage}"></h:outputLabel>
+			
+			<h:panelGrid border="0" columns="2">
+					<h:outputText id="lblIdentifiant" value="#{cc.attributes.label1}"></h:outputText>
+						<h:inputText id="txtIdentifiant" value="#{loginBean.identifiant}"></h:inputText>
+ 				    <h:outputText id="lblPassword" value="#{cc.attributes.label2}"></h:outputText>
+						<h:inputText id="txtPassWord" value="#{loginBean.password}"></h:inputText>
+					<h:commandButton id="BtnSaisie" value="#{cc.attributes.label3}"  action="#{loginBean.valider(listeClient)}"></h:commandButton>
+				</h:panelGrid>
+		</h:form>
+		
+	</cc:implementation>
+	
+	
+</html>

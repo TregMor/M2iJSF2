@@ -6,6 +6,8 @@ import javax.faces.event.PhaseListener;
 
 public class TpJSF2_PhaseListener implements PhaseListener {
 
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public void afterPhase(PhaseEvent event) {
 		System.out.println("Sortie de la phase:" + event.getPhaseId());

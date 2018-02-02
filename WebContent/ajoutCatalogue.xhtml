@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<f:ajax></f:ajax>
+<head>
+<h:outputScript library="javax.faces" name="jsf.js" target="head"></h:outputScript>
+
+</head>
+<h:body>
+
+<ui:composition template="templateTpJSF2.xhtml">
+
+		<ui:define name="title">
+			Catalogue
+		</ui:define>
+	
+		<ui:define name="content">
+
+			Ajout d'article dans le catalogue:
+			<h:panelGrid border="0" columns="2">
+			<h:outputText id="lblNom" value="Nom"></h:outputText>
+				<h:inputText id="txtNom" value="#{ajoutCatalogueBean.nom}">
+					<f:ajax event="keyup" render="errorNom" listener="#{ajoutCatalogueBean.verifierNom}"></f:ajax>
+				</h:inputText>
+				
+				
+			<h:outputText id="lblDescription" value="Description"></h:outputText>
+				<h:inputText id="txtDescription" value="#{ajoutCatalogue.description}"></h:inputText>
+				
+				<f:ajax event="keyup" render="errorDescription"></f:ajax>
+				
+			<h:outputText id="lblPrix" value="Prix"></h:outputText>
+				<h:inputText id="txtPrix" value="#{ajoutCatalogue.prix}">
+					<f:ajax event="blur" render="errorPrix" listener="#{ajoutCatalogueBean.verifierPrix}"></f:ajax>
+				</h:inputText>
+	
+		</h:panelGrid>
+		</ui:define>
+		
+</ui:composition>
+
+
+</h:body>
+
+</html>
